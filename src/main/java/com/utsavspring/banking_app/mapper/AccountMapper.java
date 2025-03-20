@@ -8,7 +8,7 @@ import java.util.Locale;
 public class AccountMapper {
     public static Account maptoAccount(AccountDto accountDto) {
         Account account = new Account(
-            accountDto.id(),
+                accountDto.id(),
                 accountDto.accountHolderName(),
                 accountDto.balance()
         );

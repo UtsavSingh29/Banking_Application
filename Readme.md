@@ -14,7 +14,7 @@ A full-fledged banking application built using **Spring Boot** for the backend a
 ### Backend (Spring Boot)
 - **Spring Boot** - RESTful API development
 - **Spring Data JPA** - Database interactions
-- **H2 Database** (or any preferred database)
+- **MySql Database** 
 - **Spring Web** - API handling
 - **Spring Boot DevTools** - Development enhancements
 
@@ -73,4 +73,3 @@ This project is licensed under the **MIT License**.
 ## Contact
 For any queries, feel free to reach out:
 - **GitHub**: [UtsavSingh29](https://github.com/UtsavSingh29)
-- **Email**: [your-email@example.com]

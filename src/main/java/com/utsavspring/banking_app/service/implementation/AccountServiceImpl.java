@@ -60,17 +60,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void deleteAccount(Long id, String name) {
-        // Fetch the account by ID
-        Account account = accountRepository.findById(id)
-                .orElseThrow(() -> new AccountException("Account does not exist"));
-
-        // ✅ Check if the account holder name matches
-        if (!account.getAccountHolderName().equalsIgnoreCase(name)) {
-            throw new AccountException("Account holder name does not match the given ID!");
-        }
-        // ✅ Now delete the account
+    public void deleteAccount(Long id) {
+        Account account=accountRepository.findById(id).orElseThrow(()->new AccountException("Account does not exists"));
         accountRepository.deleteById(id);
     }
-
 }

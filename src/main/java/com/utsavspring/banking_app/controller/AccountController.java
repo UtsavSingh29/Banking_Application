@@ -1,6 +1,5 @@
 package com.utsavspring.banking_app.controller;
 import com.utsavspring.banking_app.dto.AccountDto;
-import com.utsavspring.banking_app.exception.AccountException;
 import com.utsavspring.banking_app.service.AccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,12 +41,8 @@ public class AccountController {
         return ResponseEntity.ok(accounts);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteAccount(@PathVariable Long id, @RequestParam String name) {
-        try {
-            accountService.deleteAccount(id, name);
-            return ResponseEntity.ok("Account deleted successfully!");
-        } catch (AccountException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
+    public  ResponseEntity<String>deleteAccountById(@PathVariable Long id){
+        accountService.deleteAccount(id);
+        return ResponseEntity.ok("Account with id "+id+" deleted successfully");
     }
 }
